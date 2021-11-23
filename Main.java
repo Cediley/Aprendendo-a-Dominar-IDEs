@@ -1,23 +1,37 @@
 package com.company;
 
 import java.util.Scanner;
-
-public class Main {
-
-    public static void main(String[] args) {
-        Scanner scan = new Scanner (System.in);
-	/*
-	Criar um projeto, onde um laço de repetição vai pedir uma nota
-	essa nota deve ser de '0 a 10' ou o sistema vai pedir pra redigitar a nota
+/*
+	Criando um programa, onde ele vai recerber 5 numeros
+	informar o maior deles
+	e a media de todos os 5
 	 */
-        int nota;
 
-        System.out.println("nota: ");
-        nota = scan.nextInt();
+class Ex_media {
 
-        while (nota <  0  | nota > 10){
-            System.out.println("Nota invalida, tente outra: ");
-            nota = scan.nextInt();
-        }
+    public Ex_media(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int numero;
+        int maior = 0;
+        int soma = 0;
+
+
+        int contador = 0;
+
+        do {
+            System.out.println("numero: ");
+            numero = scan.nextInt();
+
+            soma = soma + numero;
+            if (numero > maior) maior = numero;
+
+                    contador = contador + 1;
+
+        } while (contador < 5);
+
+        System.out.println("O maior numero é: " + maior);
+        System.out.println("A média deu: " + soma/5);
+
     }
 }
